@@ -1,0 +1,5 @@
+$("#goalModal").modal("hide");
+$("body").removeClass("modal-open");
+$(".modal-backdrop").remove();
+
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').remove();

@@ -1,0 +1,12 @@
+$("#goalModal").modal("hide");
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+
+
+<% if @status %>
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').replaceWith("<%= j(render @goal) %>");
+
+<% else %>
+$("#modalArea").html("<%= j(render 'form', goal: @goal) %>")
+$("#modalArea").find(".modal").modal('show')
+<% end %>

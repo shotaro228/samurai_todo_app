@@ -1,0 +1,12 @@
+$("#goalModal").modal("hide");
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+
+
+<% if @status %>
+$("#goalsIndex").append("<%= j(render @goal) %>");
+
+<% else %>
+$("#modalArea").html("<%= j(render 'goals/form', goal: @goal) %>")
+$("#modalArea").find(".modal").modal('show')
+<% end %>

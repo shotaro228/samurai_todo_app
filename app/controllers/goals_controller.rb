@@ -44,7 +44,7 @@ class GoalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_goal
-      @goal = current_user.find_by(id: params[:id])
+      @goal = current_user.goals.find_by(id: params[:id])
       redirect_to(goals_url, alert: "ERROR!!") if @goal.blank?
     end
 
