@@ -1,0 +1,9 @@
+<% if @status %>
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').find('form [name="todo[content]"]').val("")
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').find('form [name="todo[content]"]').eq(0).focus();
+
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').find(".todo-cards").html("<%= j(render partial: 'todos/todo', collection: @goal.todos, as: :todo) %>");
+
+<% else %>
+$('[data-model_name="goal"]').filter('[data-id="<%= @goal.id %>"]').find('form [name="todo[content]"]').eq(0).focus();
+<% end %>
