@@ -1,0 +1,3 @@
+$('[data-model_name="tag"]').filter('[data-id="<%= @tag.id %>"]').remove();
+
+$('#goalsIndex').html('<%= j(render partial: "goals/goal", collection: current_user.goals, as: :goal) %>')

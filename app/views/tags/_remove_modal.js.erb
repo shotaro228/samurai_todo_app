@@ -1,0 +1,5 @@
+<%= element ||= "#tagModal" %>
+console.log($("<%= element %>"));
+$("<%= element %>").modal("hide");
+$("body").removeClass("modal-open");
+$(".modal-backdrop").remove();

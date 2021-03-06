@@ -1,0 +1,18 @@
+$('.field input#tag_name').val("")
+$('.field input#tag_name').focus();
+
+<% if @status %>
+
+$("#modalArea")
+  .find("#tagIndex")
+  .html('<%= j(render partial: "tags/tag", collection: current_user.tags.select(&:persisted?), as: :tag) %>')
+
+<% else %>
+
+<%= render 'remove_modal' %>
+
+$("#modalArea").html("<%= j(render 'tags/form', tag: @tag) %>")
+
+<%= render 'show_modal' %>
+
+<% end %>

@@ -1,0 +1,9 @@
+<%= render 'remove_modal' %>
+
+$("#modalArea").html(
+  "<%= j(render 'edit_form', tag: @tag) %>"
+);
+
+<%= render 'focus_modal' %>
+
+<%= render 'show_modal' %>
